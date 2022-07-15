@@ -1,0 +1,11 @@
+{
+	"name": "IR-1-Azure-test-create-and-delete-this-IR",
+	"properties": {
+		"type": "Managed",
+		"typeProperties": {
+			"computeProperties": {
+				"location": "South Central US"
+			}
+		}
+	}
+}

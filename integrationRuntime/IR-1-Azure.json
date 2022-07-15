@@ -1,0 +1,18 @@
+{
+	"name": "IR-1-Azure",
+	"properties": {
+		"type": "Managed",
+		"description": "Azure hosted (100%) IR",
+		"typeProperties": {
+			"computeProperties": {
+				"location": "AutoResolve",
+				"dataFlowProperties": {
+					"computeType": "General",
+					"coreCount": 8,
+					"timeToLive": 10,
+					"cleanup": false
+				}
+			}
+		}
+	}
+}

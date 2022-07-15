@@ -1,0 +1,9 @@
+{
+	"name": "data-factory-new-1",
+	"location": "southcentralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d052662b-0f1a-4517-b10a-d5c3b19bc0ad",
+		"tenantId": "63ce7d59-2f3e-42cd-a8cc-be764cff5eb6"
+	}
+}
