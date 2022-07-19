@@ -6,22 +6,31 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "MoviesDBcsvAzureDatalakeStorageGen2",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					},
 					"name": "moviesadlsoutputstream"
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "select1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
-				"          {movie,title,genres,year,Rating,RottenTomato} as string",
+				"          Column_1 as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     limit: 100,",
-				"     ignoreNoFilesFound: false) ~> moviesadlsoutputstream"
+				"     ignoreNoFilesFound: false) ~> moviesadlsoutputstream",
+				"moviesadlsoutputstream select(mapColumn(",
+				"          Column_1",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1"
 			]
 		}
 	}
