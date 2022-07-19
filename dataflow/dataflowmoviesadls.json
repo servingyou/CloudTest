@@ -19,8 +19,7 @@
 				"          {movie,title,genres,year,Rating,RottenTomato} as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
-				"     validateSchema: true,",
-				"     inferDriftedColumnTypes: true,",
+				"     validateSchema: false,",
 				"     limit: 100,",
 				"     ignoreNoFilesFound: false) ~> moviesadlsoutputstream"
 			]
