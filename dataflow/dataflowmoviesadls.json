@@ -1,0 +1,29 @@
+{
+	"name": "dataflowmoviesadls",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "MoviesDBcsvAzureDatalakeStorageGen2",
+						"type": "DatasetReference"
+					},
+					"name": "moviesadlsoutputstream"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          {movie,title,genres,year,Rating,RottenTomato} as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: true,",
+				"     inferDriftedColumnTypes: true,",
+				"     limit: 100,",
+				"     ignoreNoFilesFound: false) ~> moviesadlsoutputstream"
+			]
+		}
+	}
+}
